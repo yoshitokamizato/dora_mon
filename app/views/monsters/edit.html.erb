@@ -1,0 +1,6 @@
+<%= form_for @monster, url: "/monsters/#{@monster.id}", html: { method: :patch } do |f| %>
+  <p>なまえをかえる</p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.text_field :tribe %></p>
+  <input type="submit", value="かえる">
+<% end %>

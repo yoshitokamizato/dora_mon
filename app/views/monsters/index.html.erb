@@ -1,0 +1,11 @@
+<h1>モンスターいちらん</h1>
+<p>なまえ　　しゅぞく</p>
+<% @monsters.each do |monster| %>
+  <p>
+    <%= monster.name %>
+    <%= monster.tribe %>
+    <%= link_to "おわかれする", "/monsters/#{monster.id}", method: :delete %>
+    <%= link_to "なまえをかえる", "/monsters/#{monster.id}/edit", mothod: :get %>
+  </p>
+<% end %>
+<%= link_to "モンスターとうろくのしょへ", "/monsters/new" %>
