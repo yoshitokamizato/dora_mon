@@ -4,8 +4,8 @@
   <p>
     <%= monster.name %>
     <%= monster.tribe %>
-    <%= link_to "おわかれする", "/monsters/#{monster.id}", method: :delete %>
-    <%= link_to "なまえをかえる", "/monsters/#{monster.id}/edit", mothod: :get %>
+    <%= link_to "おわかれする", monster_path(monster), method: :delete, data: { confirm: "ほんとうにおわかれしますか？"} %>
+    <%= link_to "なまえをかえる", edit_monster_path(monster), mothod: :get %>
   </p>
 <% end %>
-<%= link_to "モンスターとうろくのしょへ", "/monsters/new" %>
+<%= link_to "モンスターとうろくのしょへ", new_monster_path %>
