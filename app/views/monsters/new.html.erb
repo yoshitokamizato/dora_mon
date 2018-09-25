@@ -1,0 +1,8 @@
+<%= form_for @monster, url: "/monsters", html: { method: :post } do |f| %>
+  <h1>ドラモン モンスターとうろくのしょ</h1>
+  <p>モンスターのなまえ：<%= f.text_field :name %></p>
+  <p>しゅぞく：<%= f.text_field :tribe %></p>
+  <input type="submit" value="とうろく">
+<% end %>
+<br>
+<%= link_to "モンスターいちらんへ", "/monsters" %>
