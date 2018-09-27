@@ -1,0 +1,11 @@
+<%= link_to "勇者登録画面へ", "/braves/new" %>
+<% @braves.each do |brave| %>
+  <p>
+    勇者名：<%= brave.name %>
+    レベル：<%= brave.level %>
+    HP:<%= brave.hp %>
+    MP：<%= brave.mp %>
+    <%= link_to "編集", "/braves/#{brave.id}/edit", method: :get %>
+    <%= link_to "削除", "/braves/#{brave.id}", method: :delete, data: {confirm: "削除しますか？"}%>
+  </p>
+<% end %>
