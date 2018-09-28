@@ -1,8 +1,10 @@
-<%= form_for @brave, url:"/braves", html:{method: :post} do |f| %>
-  <p>勇者登録</p>
-  <p>勇者名：<%= f.text_field :name %></p>
-  <p>lv：<%=  f.text_field :level %></p>
-  <p>HP：<%=  f.text_field :hp %></p>
-  <p>MP：<%=  f.text_field :mp %></p>
-  <input type = "submit" value = "登録" class = "btn btn-primary">
-<% end %>
+<div class = "container">
+  <%= form_for @brave, url:"/braves", html:{method: :post} do |f| %>
+    <h2 class="brave-new">勇者新規登録</h2>
+    <p>勇者名：<%= f.text_field :name %></p>
+    <p>lv：<%=  f.text_field :level %></p>
+    <p>HP：<%=  f.text_field :hp %></p>
+    <p>MP：<%=  f.text_field :mp %></p>
+    <input type = "submit" value = "登録" class = "btn btn-primary">
+  <% end %>
+</div>

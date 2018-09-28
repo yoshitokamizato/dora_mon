@@ -1,11 +1,30 @@
-<%= link_to "勇者登録画面へ", "/braves/new" %>
-<% @braves.each do |brave| %>
-  <p>
-    勇者名：<%= brave.name %>
-    レベル：<%= brave.level %>
-    HP:<%= brave.hp %>
-    MP：<%= brave.mp %>
-    <%= link_to "編集", "/braves/#{brave.id}/edit", method: :get %>
-    <%= link_to "削除", "/braves/#{brave.id}", method: :delete, data: {confirm: "削除しますか？"}%>
-  </p>
-<% end %>
+<div class = "container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">勇者リスト</th>
+        <th scope="col">勇者名</th>
+        <th scope="col">レベル</th>
+        <th scope="col">HP</th>
+        <th scope="col">MP</th>
+        <th scope="col">勇者情報の編集or削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @braves.each do |brave| %>
+          <tr>
+            <th scope="row"><%= brave.id %></th>
+            <td><%= brave.name %></td>
+            <td><%= brave.level %></td>
+            <td><%= brave.hp %></td>
+            <td><%= brave.mp %></td>
+            <td>
+              <%= link_to "編集", "/braves/#{brave.id}/edit", method: :get, class: "btn btn-success edit" %>
+              <%= link_to "削除", "/braves/#{brave.id}", method: :delete, data: {confirm: "削除しますか？"},class: "btn btn-warning" %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "勇者新規登録画面へ", "/braves/new" ,class: "btn btn-primary"%>
+</div>
