@@ -1,11 +1,38 @@
-<h1>モンスターいちらん</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">メニュー</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "ゆうしゃのしょ", "/braves", class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "ボスいちらん", "#", class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "モンスターずかん", "#", class: 'nav-link disabled' %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="****" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">しらべる</button>
+    </form>
+  </div>
+</nav>
+
+<h1>モンスターずかん</h1>
 <p>なまえ　　しゅぞく</p>
 <% @monsters.each do |monster| %>
   <p>
     <%= monster.name %>
     <%= monster.tribe %>
-    <%= link_to "おわかれする", monster_path(monster), method: :delete, data: { confirm: "ほんとうにおわかれしますか？"} %>
-    <%= link_to "なまえをかえる", edit_monster_path(monster), mothod: :get %>
+      <%= link_to "おわかれ", monster_path(monster), method: :delete,
+                  class: 'btn btn-outline-danger btn-sm border-0', data: { confirm: "ほんとうにおわかれしますか？"} %>
+      <%= link_to "かえる", edit_monster_path(monster), mothod: :get,
+                  class: 'btn btn-outline-info btn-sm border-0' %>
   </p>
 <% end %>
 <%= link_to "モンスターとうろくのしょへ", new_monster_path %>
