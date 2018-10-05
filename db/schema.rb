@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2018_10_03_134802) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "tribe"
+    t.integer "level"
+    t.integer "hp"
+    t.integer "mp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
