@@ -1,0 +1,6 @@
+<%= form_for @boss, url: "/bosses" , html: {method: :post} do |f| %>
+  <p>ボスの なまえ と しゅぞく を きめてください</p>
+  <p>なまえ：<%= f.text_field :name %></p>
+  <p>しゅぞく：<%= f.text_field :tribe %></p>
+  <input type="submit" value="これにする">
+<% end %>
