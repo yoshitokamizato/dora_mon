@@ -10,7 +10,10 @@ class ImportCsv < ApplicationRecord
     CSV.foreach(path, headers: true) do |row|
       list << {
         name: row["name"],
-        tribe: row["tribe"]
+        tribe: row["tribe"],
+        level: row["level"],
+        hp: row["hp"],
+        mp: row["mp"]
       }
     end
     puts "インポートを開始"

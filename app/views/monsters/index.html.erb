@@ -1,11 +1,33 @@
-<h1>モンスターいちらん</h1>
-<p>なまえ　　しゅぞく</p>
-<% @monsters.each do |monster| %>
-  <p>
-    <%= monster.name %>
-    <%= monster.tribe %>
-    <%= link_to "おわかれする", monster_path(monster), method: :delete, data: { confirm: "ほんとうにおわかれしますか？"} %>
-    <%= link_to "なまえをかえる", edit_monster_path(monster), mothod: :get %>
-  </p>
-<% end %>
-<%= link_to "モンスターとうろくのしょへ", new_monster_path %>
+<div class = "container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">なまえ</th>
+        <th scope="col">しゅぞく</th>
+        <th scope="col">レベル</th>
+        <th scope="col">HP</th>
+        <th scope="col">MP</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @monsters.each do |monster| %>
+          <tr>
+            <th scope="row"><%= monster.id %></th>
+            <td><%= monster.name %></td>
+            <td><%= monster.tribe %></td>
+            <td><%= monster.level %></td>
+            <td><%= monster.hp %></td>
+            <td><%= monster.mp %></td>
+            <td><%= link_to "なまえをかえる", edit_monster_path(monster), mothod: :get %></td>
+            <td>
+              <%= link_to "おわかれする", monster_path(monster), method: :delete, data: { confirm: "ほんとうにおわかれしますか？"} %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "モンスターとうろくのしょへ", new_monster_path %>
+</div>
