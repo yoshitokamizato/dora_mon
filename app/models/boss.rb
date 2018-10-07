@@ -12,16 +12,13 @@ class Boss < ApplicationRecord
 
       # puts "#{boss}を読み込み"
     end
-    Boss.create(list)
+    self.create!(list)
   end
-  
-  def self.delete_all(password)
-    if password == "delete"
-      bosses = Boss.all
-      bosses.each do |boss|
-        boss.destroy
-      end
-    end
-  end
+
+  # def self.delete_all(password)
+  #   if password == "delete"
+  #     Boss.delete_all
+  #   end
+  # end
 
 end
