@@ -1,11 +1,33 @@
 <h1>モンスターいちらん</h1>
-<p>なまえ　　しゅぞく</p>
-<% @monsters.each do |monster| %>
-  <p>
-    <%= monster.name %>
-    <%= monster.tribe %>
-    <%= link_to "おわかれする", monster_path(monster), method: :delete, data: { confirm: "ほんとうにおわかれしますか？"} %>
-    <%= link_to "なまえをかえる", edit_monster_path(monster), mothod: :get %>
-  </p>
-<% end %>
+<div class = "container">
+  <table class="table table-hover table-reflow">
+    <thead>
+      <tr>
+        <th></th>
+        <th>なまえ</th>
+        <th>しゅぞく</th>
+        <th>レベル</th>
+        <th>HP</th>
+        <th>MP</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @monsters.each do |monster| %>
+        <tr>
+          <th scope="row"></th>
+          <td><%= monster.name %></td>
+          <td><%= monster.tribe %></td>
+          <td><%= monster.level %></td>
+          <td><%= monster.hp %></td>
+          <td><%= monster.mp %></td>
+          <td><%= link_to "おわかれする", monster_path(monster), method: :delete,
+                                                               data: { confirm: "ほんとうにおわかれしますか？"} %></td>
+          <td><%= link_to "かえる", edit_monster_path(monster), method: :get %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <%= link_to "モンスターとうろくのしょへ", new_monster_path %>

@@ -1,3 +1,20 @@
 // Place all the styles related to the monsters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sub-container {
+  text-align: center;
+}
+
+.sub-container-box {
+  margin: 30px auto;
+  label {
+    padding: 10px;
+  }
+  .form-control {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .sub-btn {
+    padding: 30px 0;
+  }
+}
