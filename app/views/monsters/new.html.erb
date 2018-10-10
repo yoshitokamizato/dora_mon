@@ -1,8 +1,27 @@
-<%= form_for @monster, url: monsters_path(@monster), html: { method: :post } do |f| %>
-  <h1>ドラモン モンスターとうろくのしょ</h1>
-  <p>モンスターのなまえ：<%= f.text_field :name %></p>
-  <p>しゅぞく：<%= f.text_field :tribe %></p>
-  <input type="submit" value="とうろく">
-<% end %>
-<br>
-<%= link_to "モンスターいちらんへ", monsters_path %>
+<div class="sub-container">
+  <h1>モンスターとうろく</h1>
+  <div class="row ">
+    <div class="col-md-6 col-md-offset-3 sub-container-box">
+      <%= form_for @monster, url: monsters_path(@monster), html: { method: :post } do |f| %>
+        <%= f.label "なまえ" %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label "しゅぞく" %>
+        <%= f.text_field :tribe, class: 'form-control' %>
+
+        <%= f.label "レベル" %>
+        <%= f.text_field :level, class: 'form-control' %>
+
+        <%= f.label "HP" %>
+        <%= f.text_field :hp, class: 'form-control' %>
+
+        <%= f.label "MP" %>
+        <%= f.text_field :mp, class: 'form-control' %>
+        <div class="sub-btn">
+          <input type="submit" value="とうろく", class="btn btn-outline-danger">
+        </div>
+      <% end %>
+      <%= link_to "モンスターいちらんへ", monsters_path, class: 'btn btn-outline-primary monster-btn' %>
+    </div>
+  </div>
+</div>
